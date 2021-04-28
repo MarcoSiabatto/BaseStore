@@ -1,12 +1,12 @@
-// Import Mongoose
+// Import mongoose
 let mongoose = require("mongoose");
 // Module for node/express
-let mongoose = mongoose.Schema;
+let Schema = mongoose.Schema;
 // User Schema
 let userSchema = Schema({
     names: String,
     lastName: String,
-    description: String,
+    pass: String,
     age: Number,
     role: String,
 });

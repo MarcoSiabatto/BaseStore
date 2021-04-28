@@ -1,7 +1,7 @@
 // Import Mongoose
 let mongoose = require("mongoose");
 // Module for node/express
-let mongoose = mongoose.Schema;
+let Schema = mongoose.Schema;
 // User Schema
 let stockSchema = Schema({
     productId: {type: Schema.ObjectId, ref: "product"},

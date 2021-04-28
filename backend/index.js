@@ -8,6 +8,9 @@ let port = process.env.PORT || 3002;
 let app = express();
 
 // Routes
+let User = require("./routes/user");
+let Product = require("./routes/product");
+let Stock = require("./routes/stock");
 
 // Database connection
 mongoose.connect(
@@ -30,6 +33,9 @@ mongoose.connect(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Routes API's
+app.use("/api", User);
+app.use("/api", Product);
+app.use("/api", Stock);
 
 // Export module
 module.exports = app;
