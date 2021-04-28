@@ -1,5 +1,5 @@
 # BaseStore
-Basic store backend repo, with connections to DB. 
+Basic store backend repo, with connections to DB. Miss Pepita's Store LOL
 # Schemas for Database
 let userSchema = Schema({
     names: String,
