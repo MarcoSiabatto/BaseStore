@@ -9,7 +9,7 @@ let api = express.Router();
 // Post service to register
 api.post("/user/registerUser", User.registerUser);
 // Post service to Login
-api.post("/user/login", User.login);
+api.post("/login", User.login);
 
 // Export the module
 module.exports = api;

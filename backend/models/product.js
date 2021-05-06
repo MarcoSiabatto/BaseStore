@@ -5,6 +5,7 @@ let Schema = mongoose.Schema;
 // User Schema
 let productSchema = Schema({
     names: String,
+    image: String,
     description: String,
     price: Number,
 });
