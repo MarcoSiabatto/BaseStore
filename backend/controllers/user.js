@@ -68,7 +68,7 @@ const login = (req, res) => {
           }
         });
       } else {
-        res.status(401).send({ message: "Email or Password Incorrect" });
+        res.status(401).send({ message: "Name or Password Incorrect" });
       }
     }
   });
