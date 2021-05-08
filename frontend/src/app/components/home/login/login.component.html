@@ -8,14 +8,31 @@
       height="57"
     />
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
+    <div
+      *ngIf="errors"
+      class="alert alert-danger alert-dismissible"
+      role="alert"
+    >
+      <div class="alert-message">
+        {{ errors }}
+      </div>
+      <button
+        type="button"
+        (click)="endError()"
+        class="close"
+        data-dismiss="alert"
+        aria-label="Close"
+      >
+        <span aria-hidden="true">Close</span>
+      </button>
+    </div>
     <div class="form-floating">
       <input
         type="text"
         class="form-control"
         id="floatingInput"
         placeholder="Enter Username (names)"
-        #names ="ngModel"
+        #names="ngModel"
         name="names"
         [(ngModel)]="user.names"
         required
@@ -28,7 +45,7 @@
         class="form-control"
         id="floatingPassword"
         placeholder="Password"
-        #pass ="ngModel"
+        #pass="ngModel"
         name="pass"
         [(ngModel)]="user.pass"
         required

@@ -12,29 +12,36 @@ export class UserService {
   // URL variable
   public url;
   public user;
+  // Token and identity variables
+  public token: any;
+  public identity: any;
   // Class constructor
-  constructor( private http: HttpClient) {
+  constructor(private http: HttpClient) {
     this.url = global.url;
     // Initialize user
-    this.user = new User('','','','',0 ,'', false);
+    this.user = new User('', '', '', '', 0, '', false);
   }
   // Login method
-  login (user: User, getToken = true): Observable<any>{
+  login(user: User, getToken = true): Observable<any> {
     // User data Variable
     let json = user;
     // Validate if token came in
-    if (!getToken) {
-      
-    } else {
-      user.getToken = true;
-    }
+    !getToken ? '' : user.getToken = true;
     // Request Headers
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    // Return backend response 
-    return this.http.post(this.url + 'login', json, {headers: headers});
+    // Return backend response
+    return this.http.post(this.url + 'login', json, { headers: headers });
   }
   // Token Method
-  getToken (){}
+  getToken(): Observable<any> {
+    let token = localStorage.getItem('token');
+    token ? (this.token = token) : (this.token = false);
+    return this.token;
+  }
   // User data method
-  getIdentity (){}
+  getIdentity(): Observable<any> {
+    let identity = localStorage.getItem('identity');
+    identity ? (this.identity = identity) : (this.identity = false);
+    return this.identity;
+  }
 }
